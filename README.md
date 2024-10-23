@@ -1,66 +1,100 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi Pengaduan Siswa
+Aplikasi Pengaduan Siswa adalah platform yang memungkinkan siswa untuk melaporkan masalah, memberikan saran, atau menyampaikan keluhan terkait pengalaman mereka di sekolah. Aplikasi ini dibangun menggunakan Laravel dan menyediakan antarmuka yang mudah digunakan.
 
-## About Laravel
+Fitur
+Registrasi dan login pengguna
+Pengaduan siswa dengan kategori dan status
+Melihat pengaduan yang telah dibuat
+Admin dapat menanggapi pengaduan
+Sistem notifikasi untuk pembaruan status pengaduan
+Prasyarat
+Sebelum memulai, pastikan Anda telah menginstal:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+PHP (versi 8.0 atau lebih tinggi)
+Composer
+Node.js dan npm
+Database (MySQL, PostgreSQL, SQLite, dll.)
+Instalasi
+1. Mengunduh Proyek
+Clone repositori ini ke dalam direktori lokal Anda:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+bash
+Copy code
+git clone https://github.com/username/repo-name.git
+Ganti username/repo-name dengan nama pengguna dan nama repositori Anda.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2. Masuk ke Direktori Proyek
+bash
+Copy code
+cd nama-proyek
+3. Menginstal Dependensi
+Jalankan perintah berikut untuk menginstal dependensi yang diperlukan:
 
-## Learning Laravel
+bash
+Copy code
+composer install
+4. Menyalin File .env
+Salin file .env.example menjadi .env dan sesuaikan konfigurasi database Anda:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+bash
+Copy code
+cp .env.example .env
+5. Menghasilkan Kunci Aplikasi
+Jalankan perintah berikut untuk menghasilkan kunci aplikasi:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+bash
+Copy code
+php artisan key:generate
+6. Migrasi Database
+Jalankan migrasi untuk membuat tabel yang diperlukan dalam database:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+bash
+Copy code
+php artisan migrate
+7. Menginstal Dependensi NPM
+Setelah menginstal dependensi, jalankan perintah ini untuk menginstal dependensi front-end:
 
-## Laravel Sponsors
+bash
+Copy code
+npm install
+8. Membangun Aset Front-end
+Setelah menginstal dependensi, jalankan perintah ini untuk membangun aset:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+bash
+Copy code
+npm run build
+9. Menjalankan Server
+Sekarang Anda dapat menjalankan server Laravel dengan perintah:
 
-### Premium Partners
+bash
+Copy code
+php artisan serve
+Buka browser dan akses http://localhost:8000.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Menggunakan Aplikasi
+Registrasi dan Login
+Akses halaman registrasi di http://localhost:8000/register.
+Lengkapi formulir registrasi.
+Setelah berhasil mendaftar, masuk menggunakan akun yang telah dibuat di http://localhost:8000/login.
+Membuat Pengaduan
+Setelah login, Anda dapat membuat pengaduan baru.
+Isi formulir dengan detail pengaduan, termasuk kategori dan deskripsi.
+Kirim pengaduan.
+Melihat Pengaduan
+Akses halaman profil untuk melihat pengaduan yang telah Anda buat.
+Anda dapat melihat status dan tanggapan dari admin.
+Admin
+Admin dapat mengelola pengaduan, memberikan tanggapan, dan memperbarui status pengaduan melalui antarmuka admin yang terpisah.
 
-## Contributing
+Kontribusi
+Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori dan kirim pull request. Pastikan untuk mengikuti pedoman kontribusi yang baik.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Lisensi
+Proyek ini dilisensikan di bawah MIT License.
 
-## Code of Conduct
+Penutup
+Terima kasih telah menggunakan Aplikasi Pengaduan Siswa. Kami berharap aplikasi ini dapat membantu meningkatkan komunikasi antara siswa dan pihak sekolah!
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
