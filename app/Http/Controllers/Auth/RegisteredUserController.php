@@ -33,18 +33,31 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'role' => ['required', 'in:siswa,guru'], // Validasi role
         ]);
+
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => $request->role,  // Menyimpan role ke database
         ]);
+
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        // Redirect berdasarkan role
+        if ($user->role === 'siswa') {
+            return redirect()->route('siswa.index');  // Redirect ke dashboard siswa
+        } elseif ($user->role === 'guru') {
+            return redirect()->route('guru.index');  // Redirect ke halaman guru
+        }
+
+
+        // Default redirect jika role tidak ditemukan
+        return redirect()->route('dashboard');
     }
 }
